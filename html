@@ -1,1 +1,71 @@
+1. What does a doctype do?**
 
+The doctype declaration tells the browser which version of HTML the page is written in, ensuring that the browser renders the content correctly.
+
+
+2. How do you serve a page with content in multiple languages?
+
+To serve a page with multiple languages, use the `lang` attribute in the `<html>` tag and provide translated content via server-side rendering or client-side frameworks, while managing user language preferences.
+
+
+3. What kind of things must you be wary of when designing or developing for multilingual sites?
+
+Be aware of text directionality (LTR/RTL), locale-specific formatting (dates, currencies), encoding issues, language fallback strategies, and cultural nuances.
+
+
+4. What are data- attributes good for?
+
+Data attributes are used to store custom data on HTML elements, which can be accessed and manipulated with JavaScript, enabling dynamic interactions without additional database queries.
+
+
+5. Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+
+HTML5 includes semantics (e.g., `<article>`, `<section>`), connectivity (e.g., WebSockets), offline and storage (e.g., Web Storage), multimedia (e.g., `<audio>`, `<video>`), graphics (e.g., `<canvas>`), device access (e.g., Geolocation API), and performance (e.g., Web Workers).
+
+
+
+6. Describe the difference between a cookie, sessionStorage and localStorage.
+
+- **Cookies**: Small data files with expiration dates, sent with every HTTP request.
+- **sessionStorage**: Stores data for a page session, cleared when the tab is closed.
+- **localStorage**: Stores data with no expiration, persisting across sessions until explicitly deleted.
+
+
+7. Describe the difference between <script>, <script async> and <script defer>.
+
+<script>: Blocks HTML parsing until the script is loaded and executed.
+<script async>: Loads the script asynchronously and executes it as soon as it’s ready.
+<script defer>: Loads the script asynchronously and executes it after the HTML is fully parsed.
+
+
+8. Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+
+Positioning CSS in <head> allows styling during page load to prevent FOUC, while placing scripts at the end of <body> improves load performance by allowing HTML parsing first. 
+Exceptions include scripts that affect page layout and need early execution.
+
+9. What is progressive rendering?
+
+Progressive rendering is the technique of loading and displaying content on the screen incrementally as it becomes available, improving perceived performance and user experience.
+
+
+10. Why would you use a `srcset` attribute in an image tag? Explain the process the browser uses when evaluating the content of this attribute.
+
+The `srcset` attribute allows browsers to select the most appropriate image based on device resolution and viewport size, optimizing loading efficiency and image quality by evaluating image candidates and selecting the best fit.
+
+
+
+11. Have you used different HTML templating languages before?
+
+Yes, HTML templating languages like Handlebars, EJS, Pug, and Mustache are used to generate dynamic HTML with JavaScript, offering features such as loops, conditionals, and data interpolation.
+
+
+
+12. What is the difference between canvas and svg?
+
+Canvas: A pixel-based drawing surface that renders graphics in real-time and is better for complex animations.
+SVG: A vector-based format that defines graphics with XML, offering better scalability and accessibility for static images and interfaces.
+
+
+13. What are empty elements in HTML?
+
+Empty elements are HTML elements that do not have closing tags and do not contain any content, such as `<img>`, `<br>`, `<hr>`, and `<input>`.
