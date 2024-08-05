@@ -1,1 +1,298 @@
 
+1. Explain event delegation.
+
+Event delegation is a technique where a single event listener is attached to a parent element to manage events for multiple child elements. 
+This approach takes advantage of event bubbling, reducing the number of listeners and improving performance.
+
+
+2. Explain how `this` works in JavaScript.
+
+In JavaScript, `this` refers to the object that is executing the current function. 
+Its value is determined by how the function is called, such as within a method (refers to the object), in a function (global object or undefined in strict mode), or using call/apply/bind.
+
+
+3. Can you give an example of one of the ways that working with `this` has changed in ES6?
+
+In ES6, arrow functions do not have their own `this` context; they inherit `this` from the surrounding lexical context, making them useful for preserving `this` in nested functions or callbacks.
+
+
+4. Explain how prototypal inheritance works.
+
+Prototypal inheritance allows objects to inherit properties and methods from other objects. 
+An object can reference another object as its prototype, enabling property lookups to be delegated to the prototype chain.
+
+
+5. What is the difference between a variable that is: null, undefined, or undeclared?
+
+- null: An assigned value representing "no value" or "empty."
+- undefined: A variable declared but not assigned a value.
+- undeclared: A variable that has not been declared in the current scope.
+
+
+6. How would you go about checking for any of these states?
+
+Use `typeof` to check for undeclared variables, `=== null` to check for null, and `typeof` or `=== undefined` for undefined variables.
+
+
+7. What is a closure, and how/why would you use one?
+
+A closure is a function that retains access to its lexical scope, even when executed outside that scope. 
+Closures are used to encapsulate private variables and functions, creating function factories, and maintaining state in asynchronous functions.
+
+
+8. What language constructions do you use for iterating over object properties and array items?
+
+For arrays, use `for`, `forEach`, `map`, `reduce`, and `for...of`. For objects, use `for...in`, `Object.keys()`, `Object.values()`, and `Object.entries()`.
+
+
+9. Can you describe the main difference between the `Array.forEach()` loop and `Array.map()` methods and why you would pick one versus the other?
+
+`Array.forEach()` iterates over an array, executing a provided function for each element but returns `undefined`, 
+whereas `Array.map()` transforms each element and returns a new array with the transformed values.
+
+
+10. Can you describe other popular methods for iterating over arrays?
+
+Other methods include `Array.reduce()` for reducing an array to a single value, `Array.filter()` for filtering elements based on a condition, and `Array.some()`/`Array.every()` for condition checks.
+
+
+11. What is a typical use case for anonymous functions?
+
+Anonymous functions are used for callbacks, IIFEs (Immediately Invoked Function Expressions), and passing functions as arguments where a named function is unnecessary.
+
+
+12. What is the difference between host objects and native objects?
+
+Native objects are built into the JavaScript language, like `Array` and `Object`, whereas host objects are provided by the environment, such as `window` in browsers or `process` in Node.js.
+
+
+13. Explain the difference between: `function Person(){}`, `var person = Person()`, and `var person = new Person()`?**
+
+- `function Person(){}`: Declares a function.
+- `var person = Person()`: Invokes the function, returning any result or undefined.
+- `var person = new Person()`: Creates a new instance of `Person` with a prototype linked to `Person.prototype`.
+
+
+14. Explain the differences on the usage of `foo` between `function foo() {}` and `var foo = function() {}`.
+
+`function foo() {}` is a function declaration, hoisted and available throughout the scope. `var foo = function() {}` is a function expression, assigned at runtime, not hoisted.
+
+
+15. Can you explain what `Function.call` and `Function.apply` do? What is the notable difference between the two?
+
+Both methods invoke a function with a specified `this` value. `call` accepts arguments individually, while `apply` accepts arguments as an array.
+
+
+16. Explain `Function.prototype.bind`.
+
+`bind` returns a new function with a specified `this` context and optional initial arguments, useful for creating a function with fixed `this` and pre-filled arguments.
+
+
+**17. What is the difference between feature detection, feature inference, and using the UA string?**
+
+- **Feature detection**: Tests if a feature exists in the browser.
+- **Feature inference**: Assumes the presence of a feature based on another feature.
+- **UA string**: Identifies the browser via the user-agent string, which is unreliable due to spoofing.
+
+---
+
+18. Explain "hoisting".
+
+Hoisting is JavaScript's behavior of moving declarations to the top of their containing scope during compilation, allowing variables and functions to be used before their declaration.
+
+
+19. What is type coercion? What are common pitfalls of relying on type coercion in JavaScript code?
+
+Type coercion automatically converts values from one type to another. Pitfalls include unexpected conversions and bugs from implicit type changes, often requiring strict equality (`===`) to avoid.
+
+
+20. Describe event bubbling.
+
+Event bubbling is the propagation of an event from the target element upwards through its ancestors, triggering any event listeners along the way.
+
+
+21. Describe event capturing.
+
+Event capturing is the reverse of bubbling, where the event is first captured by the outermost element and propagates down to the target element.
+
+
+22. What is the difference between an "attribute" and a "property"?
+
+Attributes are defined in HTML and initialize properties in the DOM, while properties are values of DOM objects that can change dynamically.
+
+
+23. What are the pros and cons of extending built-in JavaScript objects?
+
+Pros include adding functionality and methods, while cons are potential conflicts with future standards and cross-browser inconsistencies.
+
+
+24. What is the difference between `==` and `===`?
+
+`==` compares values with type coercion, while `===` compares values without coercion, ensuring strict equality.
+
+
+25. Explain the same-origin policy with regards to JavaScript.
+
+The same-origin policy restricts web pages from making requests to a different domain than the one that served the web page, protecting against cross-site request forgery (CSRF) attacks.
+
+
+26. Why is it called a Ternary operator, what does the word "Ternary" indicate?
+
+The ternary operator is called so because it takes three operands: a condition, a result for true, and a result for false, written as `condition ? trueResult : falseResult`.
+
+
+27. What is strict mode? What are some of the advantages/disadvantages of using it?
+
+Strict mode is a way to enforce stricter parsing and error handling in JavaScript, catching common coding bugs and preventing silent errors but can make code less forgiving and more rigid.
+
+
+28. What are some of the advantages/disadvantages of writing JavaScript code in a language that compiles to JavaScript?
+
+Advantages include cleaner syntax, features from other languages, and type safety. Disadvantages include added complexity, build steps, and debugging challenges.
+
+
+29. What tools and techniques do you use debugging JavaScript code?
+
+Tools include browser developer tools, `console.log()`, breakpoints, and debuggers. Techniques involve analyzing stack traces, profiling performance, and inspecting DOM changes.
+
+
+30. Explain the difference between mutable and immutable objects.
+
+Mutable objects can be changed after creation, while immutable objects cannot be altered, only replaced, offering predictability and easier state management.
+
+
+31. What is an example of an immutable object in JavaScript?
+
+Strings and numbers are examples of immutable objects in JavaScript.
+
+
+32. What are the pros and cons of immutability?
+
+Pros include easier reasoning, debugging, and state management. Cons are increased memory usage and potentially higher complexity for some operations.
+
+
+33. How can you achieve immutability in your own code?
+
+Use `Object.freeze()` to make objects immutable, use libraries like Immutable.js, or prefer functional programming practices with pure functions.
+
+
+34. Explain the difference between synchronous and asynchronous functions.
+
+Synchronous functions block execution until complete, while asynchronous functions allow other operations to run concurrently, often using callbacks, promises, or async/await.
+
+
+35. What is the event loop?
+
+The event loop is a JavaScript mechanism that manages the execution of code, events, and callbacks by continuously checking the call stack and task queue.
+
+
+36. What is the difference between call stack and task queue?
+
+The call stack is a data structure that holds function calls and executes them, while the task queue holds asynchronous tasks to be processed after the current call stack is empty.
+
+
+37. What are the differences between variables created using `let`, `var` or `const`?
+
+- `var`: Function-scoped and hoisted, allowing redeclarations.
+- `let`: Block-scoped, not hoisted to the top of its block.
+- `const`: Block-scoped, must be initialized at declaration, prevents reassignment.
+
+
+38. Can you change a property of an object defined via `const`? How you can change this behavior?
+
+Yes, properties of a `const` object can be changed, but the reference cannot be reassigned. Use `Object.freeze()` to prevent modifications.
+
+
+39. What are the differences between ES6 class and ES5 function constructors?
+
+ES6 classes provide a clearer, syntactical sugar for defining constructors and prototypes, while ES5 constructors use functions and prototypes explicitly, leading to more verbose and less intuitive syntax.
+
+
+40. Can you offer a use case for the new arrow `=>` function syntax? How does this new syntax differ from other functions?
+
+Arrow functions are used for concise syntax and lexical `this` binding, making them ideal for callbacks or methods where `this` context should be preserved.
+
+
+41. What advantage is there for using the arrow syntax for a method in a constructor?
+
+Arrow functions bind `this` lexically, preventing issues with context inside methods and ensuring the correct `this` is used within callback functions or asynchronous code.
+
+
+42. What is the definition of a higher-order function?
+
+A higher-order function is a function that takes other functions as arguments or returns a function, enabling functional programming techniques like map, filter, and reduce.
+
+
+43. Can you give an example for destructuring an object or an array?
+
+// Object destructuring
+const person = { name: 'Alice', age: 25 };
+const { name, age } = person;
+
+// Array destructuring
+const numbers = [1, 2, 3];
+const [first, second, third] = numbers;
+```
+
+
+44. Can you give an example of generating a string with ES6 Template Literals?
+
+const name = 'Alice';
+const greeting = `Hello, ${name}! Welcome to our site.`;
+```
+
+45. Can you give an example of a curry function and why this syntax offers an advantage?
+
+function add(a) {
+  return function(b) {
+    return a + b;
+  };
+}
+
+const addFive = add(5);
+console.log(addFive(3)); // 8
+```
+
+Currying allows partial application of functions, enhancing reusability and simplifying complex function logic.
+
+
+46. What are the benefits of using spread syntax and how is it different from rest syntax?
+
+Spread syntax (`...`) expands iterables into individual elements, while rest syntax collects multiple elements into an array. Spread is used in array literals and function calls, while rest is used in function parameters.
+
+
+47. How can you share code between files?
+
+Code can be shared between files using module exports (`module.exports` or `export`) and imports (`require` or `import`), allowing encapsulation and reuse of functionality.
+
+
+48. Why you might want to create static class members?
+
+Static class members define methods or properties that belong to the class itself rather than instances, useful for utility functions or constants related to the class.
+
+
+49. What is the difference between `while` and `do-while` loops in JavaScript?
+
+`while` loops evaluate the condition before executing the loop body, while `do-while` loops execute the body at least once before evaluating the condition.
+
+
+50. What is a promise? Where and how would you use a promise?
+
+A promise is an object representing the eventual completion or failure of an asynchronous operation. 
+Use promises for handling asynchronous tasks, avoiding callback hell, and chaining multiple operations with `.then()` and `.catch()`.
+
+
+51. Discuss how you might use Object Oriented Programming principles when coding with JavaScript.
+
+OOP principles like encapsulation, inheritance, and polymorphism can be implemented in JavaScript using classes, prototypes, and ES6 features, enabling structured, reusable code.
+
+
+52. What is the difference between event.target and event.currentTarget?
+
+`event.target` refers to the actual element that triggered the event, while `event.currentTarget` refers to the element to which the event handler is attached.
+
+
+53. What is the difference between event.preventDefault() and event.stopPropagation()?
+
+`event.preventDefault()` stops the default action of an event from occurring, while `event.stopPropagation()` prevents the event from bubbling or capturing further.
+
