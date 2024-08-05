@@ -1,1 +1,182 @@
+1. What is CSS selector specificity and how does it work?
 
+CSS specificity determines which styles are applied by ranking rules based on their specificity value, calculated from the number of ID selectors, class selectors, and type selectors in a rule, with IDs being the most specific.
+
+
+2. What is the difference between "resetting" and "normalizing" CSS? Which would you choose, and why?
+
+"Resetting" CSS removes all default browser styles to create a clean slate,
+while "normalizing" preserves useful defaults and harmonizes styles across browsers. Normalizing is generally preferred for maintaining consistency with less effort.
+
+3. Describe Floats and how they work.
+
+Floats are used to position elements to the left or right within their container, allowing text and inline elements to wrap around them, originally designed for wrapping text around images.
+
+
+4. Describe z-index and how stacking context is formed.
+
+The `z-index` property controls the vertical stacking order of elements that overlap, with higher values placed on top. 
+Stacking context is formed by elements with a position value other than static and with certain CSS properties, such as `opacity` less than 1 or `transform` properties applied.
+
+
+5. Describe BFC (Block Formatting Context) and how it works.
+
+BFC is a CSS concept that determines how block-level elements are positioned and interact, including preventing elements from overlapping and containing floats. It is created by elements with properties like `overflow`, `display`, or `float`.
+
+
+6. What are the various clearing techniques and which is appropriate for what context?
+
+Clearing techniques like the `clearfix` hack, overflow auto/hidden, and the use of clear floats are used to fix collapsing container issues caused by floating child elements. Use `clearfix` for generic float containment and `overflow` for specific overflow management.
+
+
+7. How would you approach fixing browser-specific styling issues?
+
+Identify issues using browser developer tools, apply CSS hacks or feature queries for specific browsers, and use vendor prefixes or polyfills to ensure consistent styling across browsers.
+
+
+8. How do you serve your pages for feature-constrained browsers?
+
+Use progressive enhancement, ensuring basic functionality for all browsers while adding advanced features with feature detection. Apply graceful degradation to maintain usability for older browsers.
+
+
+9. What are the different ways to visually hide content (and make it available only for screen readers)?
+
+Use `visibility: hidden`, `opacity: 0`, or `clip-path` to hide visually but keep content accessible. Use `aria-hidden` for screen readers to skip the element.
+
+
+10. Have you ever used a grid system, and if so, what do you prefer?
+
+Yes, I have used grid systems like Bootstrap and CSS Grid. I prefer CSS Grid for its flexibility and simplicity in creating complex layouts without additional frameworks.
+
+
+11. Have you used or implemented media queries or mobile specific layouts/CSS?
+
+Yes, I have used media queries to implement responsive designs, allowing the layout to adapt to different screen sizes and devices, often following a mobile-first approach.
+
+
+12. Are you familiar with styling SVG?
+
+Yes, I am familiar with styling SVG using CSS to manipulate fill colors, strokes, and transform properties, allowing for scalable and customizable vector graphics.
+
+
+13. Can you give an example of an `@media` property other than `screen`?
+
+An example of an `@media` property is `print`, used to apply styles specifically for printed documents.
+
+
+14. What are some of the "gotchas" for writing efficient CSS?
+
+Avoid overly specific selectors, minimize use of the universal selector, reduce DOM depth in selectors, and use shorthand properties to reduce redundancy and improve performance.
+
+
+15. What are the advantages/disadvantages of using CSS preprocessors?
+
+Advantages include variables, nesting, and mixins for reusable and maintainable code. Disadvantages can include build process complexity and potential for misuse of features, leading to overly complex stylesheets.
+
+
+16. How would you implement a web design comp that uses non-standard fonts?
+
+Use web fonts with `@font-face` or services like Google Fonts, ensuring font files are correctly linked and optimized for performance across browsers.
+
+
+17. Explain how a browser determines what elements match a CSS selector.
+
+Browsers use the CSS specificity rules to evaluate selectors and apply styles, starting from the rightmost part of the selector and moving left, matching elements in the DOM.
+
+
+18. Describe pseudo-elements and discuss what they are used for.
+
+Pseudo-elements, like `::before` and `::after`, are used to style specific parts of an element, such as adding content before or after an element's text.
+
+
+19. Explain your understanding of the box model and how you would tell the browser in CSS to render your layout in different box models.
+
+The box model describes how padding, borders, and margins are applied to elements. Use `box-sizing: border-box;` to include padding and borders in the element’s width and height calculations.
+
+
+20. What does `* { box-sizing: border-box; }` do? What are its advantages?
+
+This sets all elements to use the `border-box` model, where padding and borders are included in the element's total width and height, making layout calculations easier and more predictable.
+
+
+21. What is the CSS `display` property and can you give a few examples of its use?
+
+The `display` property specifies how an element is rendered on the page. Examples include `block` for block-level elements, `inline` for inline elements, and `flex` for flexible layouts.
+
+
+22. What is the difference between inline and inline-block?
+
+`inline` elements do not respect width/height and flow with text, whereas `inline-block` elements respect width/height and align with text but allow block-level styling.
+
+
+23. What is the difference between the `nth-of-type()` and `nth-child()` selectors?
+
+`nth-of-type()` selects elements of a specific type within a parent, while `nth-child()` selects elements based on their position within the parent, regardless of type.
+
+
+24. What is the difference between a relative, fixed, absolute and statically positioned element?
+
+- **Relative**: Positioned relative to its normal position.
+- **Fixed**: Positioned relative to the viewport, stays in place when scrolling.
+- **Absolute**: Positioned relative to the nearest positioned ancestor.
+- **Static**: The default, positioned according to the normal flow of the document.
+
+
+25. What existing CSS frameworks have you used locally, or in production? How would you change/improve them?
+
+I've used frameworks like Bootstrap and Foundation. Improvements could include reducing bloat by customizing builds and enhancing accessibility features.
+
+
+26. Have you used CSS Grid?
+
+Yes, I have used CSS Grid to create responsive and complex grid-based layouts, which simplifies defining grid structures directly in CSS without additional frameworks.
+
+
+27. Can you explain the difference between coding a website to be responsive versus using a mobile-first strategy?
+
+Responsive design adapts to different screen sizes after initial design, while mobile-first prioritizes designing for smaller screens first, adding complexity for larger screens.
+
+
+28. Have you ever worked with retina graphics? If so, when and what techniques did you use?
+
+Yes, I have worked with retina graphics, using high-resolution images and `srcset` to provide suitable images based on device pixel ratio, ensuring crisp visuals on high-density displays.
+
+
+29. Is there any reason you'd want to use `translate()` instead of *absolute positioning*, or vice-versa? And why?
+
+`translate()` is often used for smoother animations and transitions, as it doesn't affect layout flow like absolute positioning, which reflows the document and is more suited for fixed layouts.
+
+
+30. How is clearfix CSS property useful?
+
+The clearfix hack is used to clear floated elements within a container, ensuring the container expands to encompass its floating children, preventing layout issues.
+
+
+31. Can you explain the difference between px, em and rem as they relate to font sizing?
+
+- **px**: Absolute units, fixed size.
+- **em**: Relative to the font-size of the parent element.
+- **rem**: Relative to the root element’s font-size, providing consistent scaling.
+
+
+32. Can you give an example of a pseudo class? Can you provide an example use case for a pseudo class?
+
+A pseudo-class like `:hover` is used to style elements when hovered over by a pointer, commonly used for changing button styles on hover for interactive effects.
+
+
+33. What is the difference between a block level element and an inline element? Can you provide examples of each type of element?
+
+Block-level elements (e.g., `<div>`, `<p>`) start on a new line and take up full width, whereas inline elements (e.g., `<span>`, `<a>`) flow within text without disrupting line breaks.
+
+
+34. What is the difference between CSS Grid and Flexbox? When would you use one over the other?
+
+CSS Grid is best for 2D layouts, defining both rows and columns, while Flexbox is better for 1D layouts, managing items along a single axis. 
+Use Grid for complex layouts and Flexbox for simpler, linear arrangements.
+
+
+35. What is the difference between fixed, fluid and responsive layouts?**
+
+- **Fixed**: Fixed width, doesn't change with the viewport.
+- **Fluid**: Uses percentage widths, adapting to the viewport size.
+- **Responsive**: Uses media queries to adjust layouts at specific breakpoints, providing optimal viewing across devices.
